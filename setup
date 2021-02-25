@@ -1,0 +1,21 @@
+#!/bin/env sh
+
+python_path=$(which python3)
+
+cat << EOF > hsctrl2gnome-systemd.service
+[Unit]
+Description=Battery panel for GDM's top bar
+After=network.target
+
+[Service]
+ExecStart=$python_path -u $PWD/main.py
+Restart=on-failure
+RestartSec=10s
+User=$USER
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo ln -s hsctrl2gnome-systemd.service /etc/systemd/system/hsctrl2gnome.service
+sudo systemctl enable --now hsctrl2gnome
