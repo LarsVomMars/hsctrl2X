@@ -1,21 +1,14 @@
 #!/bin/env sh
 
-python_path=$(which python3)
-
-cat << EOF > hsctrl2gnome-systemd.service
-[Unit]
-Description=Battery panel for GDM's top bar
-After=network.target
-
-[Service]
-ExecStart=$python_path -u $PWD/main.py
-Restart=on-failure
-RestartSec=10s
-User=$USER
-
-[Install]
-WantedBy=multi-user.target
+cat << EOF > hsctrl2gnome.desktop
+[Desktop Entry]
+Name=hsctrl2gnome
+Comment=Adds a battery percentage panel to your gnome top bar
+GenericName=hsctrl2gnome
+Exec=/usr/local/bin/hsctrl2gnome
+Type=Application
+Path=/usr/local/bin
 EOF
 
-sudo ln -s hsctrl2gnome-systemd.service /etc/systemd/system/hsctrl2gnome.service
-sudo systemctl enable --now hsctrl2gnome
+sudo cp hsctrl2gnome.py /usr/local/bin/hsctrl2gnome
+cp hsctrl2gnome.desktop $HOME/.config/autostart/
