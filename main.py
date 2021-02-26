@@ -10,6 +10,7 @@ from gi.repository import Gtk, GLib, AppIndicator3, Notify
 
 Notify.init("headset-charge-notify")
 
+MAX_BATTERY_LIFE = 16
 
 class Handler:
     notified = False
@@ -38,7 +39,7 @@ class Handler:
             Handler.charging = True
         elif 0 <= battery <= 100:
             Handler.charging = False
-            battery_state = f"{battery}%"
+            battery_state = f"{battery}% (~{round(battery * (MAX_BATTERY_LIFE / 100), 2)}h)"
         else:
             battery_state = "W8, what?"
 
@@ -48,7 +49,7 @@ class Handler:
             Handler.charge_notify.set_timeout(0)
             Handler.charge_notify.show()
             Handler.notified = True
-        
+
         return True
 
 
