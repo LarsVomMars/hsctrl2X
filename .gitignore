@@ -1,1 +1,4 @@
-hsctrl2gnome.desktop
+gnome/hsctrl2gnome.desktop
+**/.vscode/
+**/.idea/
+**/*.out
