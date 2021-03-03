@@ -11,7 +11,7 @@ Based on [headsetcontrol](https://github.com/Sapd/HeadsetControl) **hsctrl2gnome
 - [headsetcontrol](https://github.com/Sapd/HeadsetControl)
 - [KStatusNotifierItem/AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/)
 
-### 
+### slstatus
 - [headsetcontrol](https://github.com/Sapd/HeadsetControl)
 
 ## Setup
