@@ -3,6 +3,7 @@
 Based on [headsetcontrol](https://github.com/Sapd/HeadsetControl) **hsctrl2gnome** creates a battery percentage panel for gnome via [KStatusNotifierItem/AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/)
 
 ## Requirements
+### Gnome
 
 - libappindicator (gtk3)
 - libnotify
@@ -10,12 +11,24 @@ Based on [headsetcontrol](https://github.com/Sapd/HeadsetControl) **hsctrl2gnome
 - [headsetcontrol](https://github.com/Sapd/HeadsetControl)
 - [KStatusNotifierItem/AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/)
 
+### slstatus
+- [headsetcontrol](https://github.com/Sapd/HeadsetControl)
+
 ## Setup
 
-- Add `MAX_BATTERY_LIFE` accordingly to your headset
+### Gnome
+- Update `MAX_BATTERY_LIFE` accordingly to your headset
 - Install requirements
 - Test: `python hsctrl2gnome.py` or `./hsctrl2gnome.py`
 - If everything works: Run `./setup` which will add **hsctrl2gnome** to gnome's autostart
+
+### slstatus
+- Update `MAX_BATTERY` accordingly to your headset
+- Add `headsetcontrol.c` to `slstatus/components/` and add it to `slstatus/Makefile`
+- Re`$ make` and re`# make install` slstatus
+- Restart slstatus
+
+> Have fun!
 
 ### Idea and credits
 
