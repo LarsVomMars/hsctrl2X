@@ -4,7 +4,7 @@
 
 #define MAX_BATTERY 16
 
-static short ctr = 0;
+static short ctr = -1;
 static char prev[32] = {0};
 
 void append(char *string, char c) {
@@ -34,7 +34,7 @@ char *headsetcontrol() {
     append(result, c);
 
   if (strlen(result) == 0)
-    ret("Off");
+    return ret("Off");
 
   long battery = strtol(result, NULL, 10);
 
@@ -50,3 +50,4 @@ char *headsetcontrol() {
   } else
     return ret("idk m8");
 }
+
