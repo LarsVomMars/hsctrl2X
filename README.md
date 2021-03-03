@@ -1,6 +1,6 @@
-# hsctrl2gnome
+# hsctrl2X
 
-Based on [headsetcontrol](https://github.com/Sapd/HeadsetControl) **hsctrl2gnome** creates a battery percentage panel for gnome via [KStatusNotifierItem/AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/)
+Based on [headsetcontrol](https://github.com/Sapd/HeadsetControl) **hsctrl2X** creates a battery percentage panel for gnome via [KStatusNotifierItem/AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/) or for [slstatus](https://tools.suckless.org/slstatus/).
 
 ## Requirements
 ### Gnome
