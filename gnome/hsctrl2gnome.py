@@ -40,7 +40,7 @@ class Handler:
             Handler.charging = True
         elif 0 <= battery <= 100:
             Handler.charging = False
-            battery_state = f"{battery}% (~{round(battery * (MAX_BATTERY_LIFE / 100), 2)}h)"
+            battery_state = f"{battery}% (~{'{:.2f}'.format(round(battery * (MAX_BATTERY_LIFE / 100), 2))}h)"
         else:
             battery_state = "W8, what?"
 
